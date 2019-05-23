@@ -1,0 +1,64 @@
+{% extends 'base/base.html' %}
+{% block title %} Lista de ventas {% endblock %}
+{% block content %}
+{% load admin_urls %}
+
+
+<div class="table-responsive col-md-12">
+<table class="table" id="tabla">
+
+		
+	<thead>
+		<tr class="danger">
+            <td>Id</td>
+            <td>Fecha</td>
+			<td>Cantidad</td>
+			<td>Descripcion</td>
+            <td>Precio unitario</td>
+            <td>Precio total</td>
+			<td>Acciones</td>
+		</tr>
+
+	</thead>
+	<tbody>
+		{% if object_list %}
+		{% for ventas in object_list %}
+		<tr>
+			<td>{{ ventas.id   }}</td>
+			<td>{{ ventas.fecha  }}</td>
+			<td>{{ ventas.cantidad  }}</td>
+			<td>{{ ventas.descripcion}}</td>
+			<td>{{ ventas.precio_uni }}</td>
+			<td>${{ ventas.precio_t }}</td>
+			<td>
+            <a class="btn btn-danger" href="{% url 'ventas_eliminar' ventas.id %}"><span class="glyphicon glyphicon-trash"></span></a>
+			</td>
+
+		</tr>
+		{% endfor %}
+
+		{% else %}
+		<h2>No Hay registros relacionados con su busqueda</h2>
+
+		{% endif %}
+	</tbody>
+</table>
+</div>
+<ul class="pager">
+
+	{% if page_obj.has_previous %}
+	<li>
+		<a href="?page={{ page_obj.previous_page_number }}">Anterior</a>
+	</li>
+	{% endif %}
+	<li>
+	{% if page_obj.has_next %}		
+		<a href="?page={{ page_obj.next_page_number }}">Siguiente</a>
+	</li>		
+	{% endif %}
+
+
+</ul>
+
+
+{% endblock %}

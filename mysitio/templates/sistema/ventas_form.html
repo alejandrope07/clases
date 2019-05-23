@@ -1,0 +1,55 @@
+{% extends 'base/base.html' %}
+
+{% block title %} Nueva venta {% endblock %}
+{% block content %}
+<form method="post">
+	{% csrf_token %}
+	<div class="row">
+        <div class="col-md-4 col-md-offset-8">
+            <div class="form-group">
+                <label for="{{form.fecha.name}}">{{form.fecha.label}}</label>
+                        {{form.fecha}}
+             </div>
+        </div>
+		<div class="col-md-6 col-md-offset-0">
+			<div class="form-group">
+				<label for="{{form.cantidad.name}}">{{form.cantidad.label}}</label>
+				{{form.cantidad}}
+			</div>
+		</div>
+
+		<div class="col-md-6 col-md-offset-0">
+			<div class="form-group">
+				<label for="{{form.nom_producto.name}}">{{form.nom_producto.label}}</label>
+				{{form.nom_producto}}
+			</div>
+		</div>
+
+		<div class="col-md-6 col-md-offset-0">
+			<div class="form-group">
+				<label for="{{form.descripcion.name}}">{{form.descripcion.label}}</label>
+				{{form.descripcion}}
+			</div>
+		</div>
+
+		<div class="col-md-6 col-md-offset-0">
+			<div class="form-group">
+				<label for="{{form.precio_uni.name}}">{{form.precio_uni.label}}</label>
+						{{form.precio_uni}}
+				
+			</div>
+        </div>
+		<div class="col-md-6 col-md-offset-0">
+                <div class="form-group">
+                    <label for="{{form.precio_t.name}}">{{form.precio_t.label}}</label>
+                            {{form.precio_t}}
+                    
+                </div>
+            </div>
+
+	</div>
+
+	<button type="submit" class="btn btn-primary col-md-3">Guardar</button>
+</form>
+
+{% endblock %}

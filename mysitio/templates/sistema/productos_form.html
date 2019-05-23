@@ -1,0 +1,49 @@
+{% extends 'base/base.html' %}
+
+{% block title %} Nuevo producto {% endblock %}
+{% block content %}
+<form method="post">
+	{% csrf_token %}
+	<div class="row">
+		<div class="col-md-4 col-md-offset-8">
+			<div class="form-group">
+				<label for="{{form.clave_producto.name}}">{{form.clave_producto.label}}</label>
+				{{form.clave_producto}}
+			</div>
+		</div>
+
+		<div class="col-md-6 col-md-offset-0">
+			<div class="form-group">
+				<label for="{{form.cantidad.name}}">{{form.cantidad.label}}</label>
+				{{form.cantidad}}
+			</div>
+		</div>
+
+		<div class="col-md-6 col-md-offset-0">
+			<div class="form-group">
+				<label for="{{form.nom_producto.name}}">{{form.nom_producto.label}}</label>
+				{{form.nom_producto}}
+			</div>
+		</div>
+
+		<div class="col-md-6 col-md-offset-0">
+			<div class="form-group">
+				<label for="{{form.descripcion.name}}">{{form.descripcion.label}}</label>
+				{{form.descripcion}}
+			</div>
+		</div>
+
+		<div class="col-md-6 col-md-offset-0">
+			<div class="form-group">
+				<label for="{{form.precio.name}}">{{form.precio.label}}</label>
+						{{form.precio}}
+				
+			</div>
+		</div>
+
+	</div>
+
+	<button type="submit" class="btn btn-primary col-md-3">Guardar</button>
+</form>
+
+{% endblock %}
