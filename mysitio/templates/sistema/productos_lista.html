@@ -31,7 +31,9 @@
 			<td>{{ productos.descripcion }}</td>
 			<td>${{ productos.precio }}</td>
 			<td>
-            <a class="btn btn-danger" href="{% url 'productos_eliminar' productos.id %}"><span class="glyphicon glyphicon-trash"></span></a>
+			<a class="btn btn-danger" href="{% url 'productos_editar' productos.id %}">Editar</a>
+			<a class="btn btn-danger" href="{% url 'productos_eliminar' productos.id %}"><span class="glyphicon glyphicon-trash"></span></a>
+			
 			</td>
 
 		</tr>
