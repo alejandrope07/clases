@@ -1,8 +1,6 @@
-from django.shortcuts import render, redirect
+
 from django.views.generic import CreateView, UpdateView, ListView, DeleteView
 from django.urls import reverse_lazy
-from django.http import HttpResponse
-from django.core import serializers
 from apps.ventas.forms import VentasForm
 from django.contrib.auth.mixins import LoginRequiredMixin
 from apps.ventas.models import Ventas

@@ -2,7 +2,26 @@
 {% block title %} Lista de productos {% endblock %}
 {% block content %}
 {% load admin_urls %}
-
+<form method="get" action="{% url 'productos_listar_buscar' %}" id="myform" >
+	<div class="form-row">
+			<div class="col-md-5 col-md-offset-0">
+	<div class="form-group">
+			
+	    <div class="input-group">    
+				<div class="input-group-addon">				
+							<span class="glyphicon glyphicon-search"></span>	
+				</div>
+				<input type="text" name="filter" id="filter" class="form-control" placeholder="Buscar"/> 
+				
+		</div>
+				
+	</div>
+	</div>
+	</div>
+	<div class="col-md-3 col-md-offset-0">
+		<input type="submit" name="submit" value="Buscar" class="form-control"/>
+	</div>
+</form>
 
 <div class="table-responsive col-md-12">
 <table class="table" id="tabla">
@@ -13,7 +32,7 @@
             <td>Clave_producto</td>
             <td>Id</td>
 			<td>Cantidad</td>
-			<td>Nom_producto</td>
+			<td>Nombre producto</td>
 			<td>Descripcion</td>
 			<td>Precio</td>
 			<td>Acciones</td>
@@ -40,7 +59,7 @@
 		{% endfor %}
 
 		{% else %}
-		<h2>No Hay registros relacionados con su busqueda</h2>
+		<h2>No Hay productos</h2>
 
 		{% endif %}
 	</tbody>

@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'datetime',
     'apps.ventas',
     'apps.productos',
 
@@ -133,7 +132,7 @@ STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
-LOGIN_REDIRECT_URL = reverse_lazy('inicio')
+
 
 
 

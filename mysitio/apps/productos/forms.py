@@ -1,7 +1,6 @@
 from django import forms
 
 from django.contrib.admin.widgets import AdminDateWidget
-from django.forms.fields import DateField
 from apps.productos.models import Productos
 
 from django.contrib.admin import widgets
